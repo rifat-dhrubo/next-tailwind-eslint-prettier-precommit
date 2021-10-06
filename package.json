@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint --fix",
+    "lint:fix": "eslint --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
+    "lint:format": "prettier  --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
+    "lint-custom": "yarn lint:format && yarn lint:fix && yarn lint",
+    "type-check": "tsc"
   },
   "dependencies": {
     "next": "11.1.2",
@@ -15,8 +19,14 @@
   },
   "devDependencies": {
     "@types/react": "17.0.27",
+    "babel-eslint": "^10.1.0",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "lint-staged": "^11.2.0",
+    "prettier": "^2.4.1",
     "typescript": "4.4.3"
-  }
+  },
+  "pre-commit": "lint"
 }
