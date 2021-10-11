@@ -10,6 +10,7 @@
     "lint:fix": "eslint --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
     "lint:format": "prettier  --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
     "lint-custom": "yarn lint:format && yarn lint:fix && yarn lint",
+    "lint:sol": "prettier --write 'contracts/**/*.sol'",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
     "prepare": "husky install"
   },
@@ -39,6 +40,7 @@
     "next-svgr": "^0.0.2",
     "postcss": "^8.3.9",
     "prettier": "^2.4.1",
+    "prettier-plugin-solidity": "^1.0.0-beta.18",
     "tailwindcss": "^2.2.16",
     "typescript": "4.4.3"
   }
